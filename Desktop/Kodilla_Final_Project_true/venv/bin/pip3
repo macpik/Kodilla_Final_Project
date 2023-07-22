@@ -1,4 +1,4 @@
-#!/Users/maciejpikula/Desktop/Kodilla_Final_Project_true/venv/bin/python3.11
+#!/Users/maciejpikula/Desktop/Kodilla_Final_Project_true/venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
