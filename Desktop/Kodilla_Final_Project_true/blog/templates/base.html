@@ -9,7 +9,6 @@
 
  <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/starter-template/">
 
- <!-- Bootstrap core CSS -->
  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
@@ -29,13 +28,16 @@
    </button>
 
    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-     <ul class="navbar-nav mr-auto">
-     </ul>
-     <form class="form-inline my-2 my-lg-0">
-       <input class="form-control mr-sm-2" type="text" placeholder="Szukaj" aria-label="Szukaj">
-       <button class="btn btn-secondary my-2 my-sm-0" type="submit">Szukaj</button>
-     </form>
-   </div>
+    <ul class="navbar-nav mr-auto">
+    </ul>
+    {% if session.logged_in %}
+      <form class="form-inline my-2 my-lg-0" action="{{ url_for('logout') }}" method="POST">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Wyloguj</button>
+      </form>
+    {% else %}
+      <a href="{{ url_for('login') }}" class="btn btn-secondary my-2 my-lg-0">Zaloguj</a>
+    {% endif %}
+  </div>
  </nav>
 
  <main role="main" class="container">
